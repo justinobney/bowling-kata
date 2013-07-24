@@ -123,4 +123,16 @@ describe('Bowling Kata tests', function(){
     var score = game.getScore();
     expect(score).toEqual(185);
   });
+
+  it('should be able to start new games via "init"', function () {
+    rollMany(12, 10);
+    var gameScore = game.getScore();
+    expect(gameScore).toEqual(300);
+
+    game.init();
+
+    rollMany(21, 5);
+    gameScore = game.getScore();
+    expect(gameScore).toEqual(150);
+  });
 });
