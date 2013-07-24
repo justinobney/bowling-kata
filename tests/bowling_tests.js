@@ -82,15 +82,14 @@ describe('Bowling Kata tests', function(){
 
   it('should score 270 for 10 strikes', function () {
     rollMany(10, 10);
+    rollMany(3, 0);
     var gameScore = game.getScore();
 
     expect(gameScore).toEqual(270);
   });
 
   it('should handle a perfect game', function () {
-    console.log('perfect game');
     rollMany(12, 10);
-    console.log('perfect game over');
     var gameScore = game.getScore();
 
     expect(gameScore).toEqual(300);
@@ -103,25 +102,25 @@ describe('Bowling Kata tests', function(){
     expect(gameScore).toEqual(150);
   });
 
-  // it('should handle a random game', function () {
-  //   game.roll(10);
-  //   game.roll(10);
-  //   game.roll(5);
-  //   game.roll(5);
-  //   game.roll(6);
-  //   game.roll(3);
-  //   game.roll(10);
-  //   game.roll(10);
-  //   game.roll(7);
-  //   game.roll(2);
-  //   game.roll(7);
-  //   game.roll(3);
-  //   game.roll(10);
-  //   game.roll(5);
-  //   game.roll(5);
-  //   game.roll(10);
+  it('should handle a random game', function () {
+    game.roll(10);
+    game.roll(10);
+    game.roll(5);
+    game.roll(5);
+    game.roll(6);
+    game.roll(3);
+    game.roll(10);
+    game.roll(10);
+    game.roll(7);
+    game.roll(2);
+    game.roll(7);
+    game.roll(3);
+    game.roll(10);
+    game.roll(5);
+    game.roll(5);
+    game.roll(10);
 
-  //   var score = game.getScore();
-  //   expect(score).toEqual(182);
-  // });
+    var score = game.getScore();
+    expect(score).toEqual(185);
+  });
 });
